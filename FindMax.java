@@ -8,11 +8,13 @@ public class FindMax {
 		int sign_b = (b >> 31) & (0x1);
 		int sign_c = (c >> 31) & (0x1) ^ 1;
 
-		//if a and b has different sign
-		int isSignDiff = sign_a ^ sign_b; // 1 if sign of a and b are different
-		k = sign_a ^ isSignDiff; 	// if sign diff = 1, then 
-									// 1) sign_a = 0, a is larger k = 1
-									// 2) sign_a = 1, a is smaller k = 0
+		// 1 if sign of a and b are different
+		int isSignDiff = sign_a ^ sign_b; 
+
+		// if sign diff = 1, then 
+		// 1) sign_a = 0, a is larger k = 1
+		// 2) sign_a = 1, a is smaller k = 0
+		k = sign_a ^ isSignDiff; 	
 
 		// if sign diff = 1, k keep same
 		// if sign diff = 0, k = sign_c// 2) sign_a = 1, a is smaller k = 0
